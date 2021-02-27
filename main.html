@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Covid Center</title>
+</head>
+
+<body>
+    <header>
+        <h1>Covid Center</h1>
+    </header>
+    <form method="POST">
+        <h2>General Info</h2>
+        <label for="txtFName">First Name:</label><br>
+        <input type="text" id="txtFName" name="txtFName" required><br>
+        <label for="txtLName">Last Name:</label><br>
+        <input type="text" id="txtLName" name="txtLName" required><br>
+        <label for="rdSex">Sex:</label><br>
+        <input type="radio" id="male" name="rdSex" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="rdSex" value="female">
+        <label for="female">Female</label><br>
+        <label for="txtPhoneNum">Phone Number:</label><br>
+        <input type="txt" id="phoneNum" name="phoneName"><br>
+        <label for="emEmail">Email:</label><br>
+        <input type="email" id="emEmail" name="emEmail"><br>
+        <label for="txtAddress">Address:</label><br>
+        <input type="text" id="txtAddress" name="txtAddress"><br>
+        <label for="dateDOB">Date of Birth:</label><br>
+        <input type="date" id="dateDOB" name="dateDOB"><br>
+        <h2>Symptom Questionaire</h2>
+        <div>Have you have these symptoms in the last 24 hours?</div><br>
+        <label for="rdFever">Fever or Chills:</label>
+        <input type="radio" id="feverY" name="rdFever" value="yes">
+        <label for="feverY">Yes</label>
+        <input type="radio" id="feverN" name="rdFever" value="no">
+        <label for="feverN">No</label><br>
+        <label for="rdCough">Cough:</label>
+        <input type="radio" id="coughY" name="rdCough" value="yes">
+        <label for="coughY">Yes</label>
+        <input type="radio" id="coughN" name="rdCough" value="no">
+        <label for="coughN">No</label><br>
+        <label for="rdBreath">Shortness of breath or difficulty breathing:</label>
+        <input type="radio" id="breathY" name="rdBreath" value="yes">
+        <label for="breathY">Yes</label>
+        <input type="radio" id="breathN" name="rdBreath" value="no">
+        <label for="breathN">No</label><br>
+        <label for="rdFatigue">Fatigue:</label>
+        <input type="radio" id="fatigueY" name="rdFatigue" value="yes">
+        <label for="fatigueY">Yes</label>
+        <input type="radio" id="fatigueN" name="rdFatigue" value="no">
+        <label for="fatigueN">No</label><br>
+    </form>
+</body>
+
+</html>
