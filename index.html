@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="styles.css">
+    
     <title>COVID-19 Center Website</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
@@ -15,7 +16,7 @@
     <section>
         <h2 class="alert alert-info">Please fill out this form:</h2>
         <article>
-            <form>
+            <form onsubmit="return validateForm()" id="mainForm" novalidate>
                 <fieldset class="border">
                     <legend class="w-auto">Part 1: Patient Information</legend>
                     <div class="form-group row">
@@ -101,11 +102,13 @@
 
                     <div class="row form-group">
                         <label for="txtDoB" class="col-sm-2 col-form-label">
-                            Date of birth
+                            Date of birth:
                         </label>
                         <div class="col-sm-10 col-lg-4">
                             <input type="date" id="txtDoB" name="txtDoB" required class="form-control">
+                            <div id="divDoBError" class="invisible errorMessage col-sm-5 col-lg-10"></div>
                         </div>
+                        
                     </div>
                 </fieldset>
                 <fieldset class="border">
@@ -274,21 +277,24 @@
                         </div>
                     </div>
                     <div class="row form-group">
-                        <label for="ddTravel" class="col-sm-3 col-form-label">
+                        <label for="ddCountry" class="col-sm-3 col-form-label">
                             Have you travelled to any country in the last 14 days?
                         </label>
                         <div>
-                            <select id="ddTravel" name="ddTravel" class="form-control">
+                            <select id="ddCountry" name="ddCountry" class="form-control" onchange="updateCountryView()">
                                 <option value="Yes">Yes</option>
                                 <option value="No" selected>No</option>
                             </select>
                         </div>
+                    </div>
+                    <div id="divCountry" class="row form-group invisible">
                         <label for="txtCountry" class="col-sm-3 col-form-label">
-                            If yes, what countries? (Seperate with comma.)
+                            If yes, what countries? (Seperate with commas.)
                         </label>
-                        <div class="col">
+                        <div class="col-4">
                             <input type="text" id="txtCountry" name="txtCountry" required class="form-control"
-                                placeholder="N/A for none">
+                                placeholder="Countries">
+                            <div id="divCountryError" class="invisible errorMessage col-sm-5 col-lg-10"></div>
                         </div>
                     </div>
                     <div class="row form-group">
@@ -332,6 +338,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
