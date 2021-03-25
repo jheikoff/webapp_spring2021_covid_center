@@ -13,8 +13,11 @@ function updateCountryView(){
 function validateForm(){
     //reset inputs
     var elements = document.getElementsByTagName("input");
+    var errorMessages = document.getElementsByClassName("errorMessage");
     for(let i=0; i<elements.length; i++){
         elements[i].classList.remove("hasError");
+        errorMessages[i].classList.add("invisible");
+        errorMessages[i].innerHTML = "";
     }
     //check 1
     var DoB = document.querySelector("#txtDoB");
@@ -63,6 +66,8 @@ function validateForm(){
         for(let j = 0; j<invalidChars.length; j++){
             if(elements[i].value.indexOf(invalidChars[j]) != -1){
                 elements[i].classList.add("hasError");
+                errorMessages[i].classList.remove("invisible");
+                errorMessages[i].innerHTML = "Cannot use: &, <, >, #, !, ', \", ~";
                 formIsValid = false;
             }
         }

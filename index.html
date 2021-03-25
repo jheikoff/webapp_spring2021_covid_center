@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    
+
     <title>COVID-19 Center Website</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 
@@ -28,6 +28,7 @@
                         <div class="col-sm-10 col-lg-4">
                             <input type="text" id="txtFirstName" name="txtFirstName" required class="form-control"
                                 placeholder="First Name" required>
+                            <span id="errorFirstName" class="errorMessage invisible"></span>
                         </div>
 
                         <div class="col-sm-2 col-lg-2">
@@ -38,6 +39,7 @@
                         <div class="col-sm-10 col-lg-4">
                             <input type="text" id="txtLastName" name="txtLastName" required class="form-control"
                                 placeholder="Last Name" required>
+                            <span id="errorLastName" class="errorMessage invisible"></span>
                         </div>
                     </div>
 
@@ -50,16 +52,19 @@
                                         <input type="radio" id="rbMale" name="gender" value="male"
                                             class="form-check-input">
                                         <label for="rbMale" class="form-check-label">Male</label>
+                                        <span id="errorMale" class="errorMessage invisible"></span>
                                     </div>
                                     <div class="form-check">
                                         <input type="radio" id="rbFemale" name="gender" value="female"
                                             class="form-check-input">
                                         <label for="rbFemale" class="form-check-label">Female</label>
+                                        <span id="errorFemale" class="errorMessage invisible"></span>
                                     </div>
                                     <div class="form-check">
                                         <input type="radio" id="rbOther" name="gender" value="other"
                                             class="form-check-input">
                                         <label for="rbOther" class="form-check-label">Other</label>
+                                        <span id="errorOther" class="errorMessage invisible"></span>
                                     </div>
                                 </div>
                         </fieldset>
@@ -71,6 +76,7 @@
                         <div class="col-sm-10 col-lg-4">
                             <input type="tel" id="txtTel" name="txtTel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                                 class="form-control" placeholder="555-555-5555">
+                            <span id="errorTel" class="errorMessage invisible"></span>
                         </div>
                         <label for="txtEmail" class="col-sm-2 col-lg-2 col-form-label">
                             Email:
@@ -78,6 +84,7 @@
                         <div class="col-sm-10 col-lg-4">
                             <input type="email" id="txtEmail" name="txtEmail" required class="form-control"
                                 placeholder="name@example.com" required>
+                            <span id="errorEmail" class="errorMessage invisible"></span>
                         </div>
                     </div>
                     <div class="row form-group">
@@ -87,16 +94,20 @@
                         <div class="col-md-12 col-lg-6">
                             <input type="text" id="txtAddress" name="txtAddress" class="form-control"
                                 placeholder="Street">
+                            <span id="errorAddress" class="errorMessage invisible"></span>
                         </div>
                         <div class="col">
                             <input type="text" id="txtCity" name="txtCity" class="form-control" placeholder="City">
+                            <span id="errorCity" class="errorMessage invisible"></span>
                         </div>
                         <div class="col">
                             <input type="text" id="txtState" name="txtState" class="form-control" placeholder="State">
+                            <span id="errorState" class="errorMessage invisible"></span>
                         </div>
                         <div class="col">
                             <input type="text" id="txtZipcode" name="txtZipcode" class="form-control"
                                 placeholder="Zipcode" pattern="[0-9]{5}">
+                            <span id="errorZipcode" class="errorMessage invisible"></span>
                         </div>
                     </div>
 
@@ -108,7 +119,7 @@
                             <input type="date" id="txtDoB" name="txtDoB" required class="form-control">
                             <div id="divDoBError" class="invisible errorMessage col-sm-5 col-lg-10"></div>
                         </div>
-                        
+
                     </div>
                 </fieldset>
                 <fieldset class="border">
@@ -315,6 +326,7 @@
                         <div>
                             <input type="text" id="txtTemp" name="txtTemp" required class="form-control"
                                 pattern="[0-9]{2-3}.[0-9]" placeholder="Temperature">
+                            <span id="errorTemp" class="errorMessage invisible"></span>
                         </div>
                     </div>
 
